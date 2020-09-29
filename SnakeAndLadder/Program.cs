@@ -41,6 +41,7 @@ namespace SnakeAndLadder
                         case 1:
                             Console.WriteLine("Ladder");
                             player.position += diceNo;
+                            player.noOfTurns -= 1;
                             if (player.position > 100)
                                 player.position -= diceNo;
                             Console.WriteLine("New Position : " + player.position);
