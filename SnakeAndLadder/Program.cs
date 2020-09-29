@@ -30,6 +30,8 @@ namespace SnakeAndLadder
                     case 1:
                         Console.WriteLine("Ladder");
                         position += diceNo;
+                        if (position > 100)
+                            position -= diceNo;
                         Console.WriteLine("New Position : " + position);
                         break;
                     case 2:
