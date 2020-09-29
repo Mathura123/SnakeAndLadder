@@ -12,26 +12,34 @@ namespace SnakeAndLadder
         static void PlayGame()
         {
             int position = 0;
-            Console.WriteLine("Your Position : "+ position);
-            int diceNo = SnakeAndLadder.Program.RollDice();
-            Console.WriteLine("Dice rolled : "+ diceNo);
-            int option = SnakeAndLadder.Program.CheckOption();
-            switch(option)
+            Console.WriteLine("Your Start Position : "+ position);
+            int noOfTurns = 0;
+            while (position < 100)
             {
-                case 0:
-                    Console.WriteLine("No Play");
-                    Console.WriteLine("New Position : " + position);
-                    break;
-                case 1:
-                    Console.WriteLine("Ladder");
-                    position += diceNo;
-                    Console.WriteLine("New Position : "+ position);
-                    break;
-                case 2:
-                    Console.WriteLine("Snake");
-                    position -= diceNo;
-                    Console.WriteLine("New Postion : "+ position);
-                    break;
+                noOfTurns++;
+                Console.WriteLine("Turn : " + noOfTurns);
+                int diceNo = SnakeAndLadder.Program.RollDice();
+                Console.WriteLine("Dice rolled : " + diceNo);
+                int option = SnakeAndLadder.Program.CheckOption();
+                switch (option)
+                {
+                    case 0:
+                        Console.WriteLine("No Play");
+                        Console.WriteLine("New Position : " + position);
+                        break;
+                    case 1:
+                        Console.WriteLine("Ladder");
+                        position += diceNo;
+                        Console.WriteLine("New Position : " + position);
+                        break;
+                    case 2:
+                        Console.WriteLine("Snake");
+                        position -= diceNo;
+                        if (position < 0)
+                            position = 0;
+                        Console.WriteLine("New Postion : " + position);
+                        break;
+                }
             }
         }
         static int RollDice()
