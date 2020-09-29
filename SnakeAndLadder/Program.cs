@@ -17,9 +17,9 @@ namespace SnakeAndLadder
             while (position < 100)
             {
                 noOfTurns++;
-                Console.WriteLine("Turn : " + noOfTurns);
                 int diceNo = SnakeAndLadder.Program.RollDice();
-                Console.WriteLine("Dice rolled : " + diceNo);
+                Console.WriteLine("\nDice rolled : " + diceNo);
+                Console.WriteLine("No of Turns : " + noOfTurns);
                 int option = SnakeAndLadder.Program.CheckOption();
                 switch (option)
                 {
@@ -43,6 +43,7 @@ namespace SnakeAndLadder
                         break;
                 }
             }
+            Console.WriteLine("\nYipee!! You Won");
         }
         static int RollDice()
         {
