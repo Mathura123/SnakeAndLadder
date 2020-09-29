@@ -12,6 +12,15 @@ namespace SnakeAndLadder
         static void PlayGame()
         {
             int position = 0;
+            Console.WriteLine("Your Position : "+ position);
+            int diceNo = SnakeAndLadder.Program.RollDice();
+            Console.WriteLine("Dice rolled : "+ diceNo);
+        }
+        static int RollDice()
+        {
+            Random random = new Random();
+            int dice = random.Next(1, 7);
+            return dice;
         }
     }
 }
